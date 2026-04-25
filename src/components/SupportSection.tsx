@@ -1,12 +1,27 @@
+import { useEffect, useState } from "react";
 import { HelpCircle, Instagram, Mail, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/SectionHeader";
-import { supportChannels } from "@/content/siteContent";
+import { supportChannels as defaultSupportChannels } from "@/content/siteContent";
+import { buildSupportChannels, fetchSharedSiteSettings } from "@/lib/sharedPlatform";
 
 const supportIcons = [Mail, Instagram, Youtube, HelpCircle] as const;
 
 export function SupportSection() {
+  const [channels, setChannels] = useState(defaultSupportChannels as readonly { title: string; description: string; href: string; label: string; }[]);
+
+  useEffect(() => {
+    let active = true;
+    fetchSharedSiteSettings().then((settings) => {
+      if (!active) return;
+      setChannels(buildSupportChannels(settings));
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <section id="support" className="bg-muted/25 py-24">
       <div className="container">
@@ -44,7 +59,7 @@ export function SupportSection() {
           </div>
 
           <div className="grid gap-4">
-            {supportChannels.map((channel, index) => {
+            {channels.map((channel, index) => {
               const Icon = supportIcons[index] ?? HelpCircle;
 
               return (

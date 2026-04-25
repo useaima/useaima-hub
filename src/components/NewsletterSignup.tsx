@@ -6,6 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { Link } from "react-router-dom";
+import { subscribeToBlogUpdates } from "@/lib/blogApi";
 
 export function NewsletterSignup() {
   const [email, setEmail] = useState("");
@@ -19,14 +20,27 @@ export function NewsletterSignup() {
     if (!email) return;
 
     setLoading(true);
-    // Simulate a short delay for UX feel — replace with real API call when backend is connected
-    await new Promise((resolve) => setTimeout(resolve, 800));
-    setLoading(false);
-    setSubmitted(true);
-    toast({
-      title: "Subscribed!",
-      description: "You'll receive AI insights and product updates.",
-    });
+    try {
+      await subscribeToBlogUpdates({
+        email,
+        source: 'useaima-hub-homepage',
+        url: typeof window !== 'undefined' ? window.location.href : undefined,
+      });
+      setSubmitted(true);
+      setEmail('');
+      toast({
+        title: "Subscribed!",
+        description: "You'll receive AI insights and product updates.",
+      });
+    } catch (error) {
+      toast({
+        title: 'Subscription failed',
+        description: error instanceof Error ? error.message : 'Please try again in a moment.',
+        variant: 'destructive',
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (

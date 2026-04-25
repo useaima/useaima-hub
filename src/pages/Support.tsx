@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { HelpCircle, Instagram, Mail, Youtube } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AtomicUtilityBlock } from "@/components/AtomicUtilityBlock";
@@ -9,11 +10,12 @@ import {
   blogUrl,
   siteName,
   siteUrl,
-  supportChannels,
+  supportChannels as defaultSupportChannels,
   supportFaqItems,
   supportUrl,
   toolLinks,
 } from "@/content/siteContent";
+import { buildSupportChannels, defaultSharedSiteSettings, fetchSharedSiteSettings } from "@/lib/sharedPlatform";
 
 const iconMap = {
   "Email support": Mail,
@@ -58,6 +60,21 @@ const supportStructuredData = [
 ];
 
 export default function Support() {
+  const [settings, setSettings] = useState(defaultSharedSiteSettings);
+  const [channels, setChannels] = useState<typeof defaultSupportChannels[number][]>([...defaultSupportChannels]);
+
+  useEffect(() => {
+    let active = true;
+    fetchSharedSiteSettings().then((shared) => {
+      if (!active) return;
+      setSettings(shared);
+      setChannels(buildSupportChannels(shared));
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <>
       <SEOHead
@@ -82,13 +99,13 @@ export default function Support() {
           </a>
           <div className="flex flex-wrap gap-2">
             <Button asChild variant="outline" className="rounded-full">
-              <a href={siteUrl}>Main site</a>
+              <a href={settings.siteUrl}>Main site</a>
             </Button>
             <Button asChild variant="outline" className="rounded-full">
-              <a href={blogUrl}>Blog</a>
+              <a href={settings.blogUrl}>Blog</a>
             </Button>
             <Button asChild className="rounded-full">
-              <a href={toolLinks.financeAI} target="_blank" rel="noopener noreferrer">
+              <a href={settings.evaUrl || toolLinks.financeAI} target="_blank" rel="noopener noreferrer">
                 Open eva
               </a>
             </Button>
@@ -114,10 +131,10 @@ export default function Support() {
               <div className="mt-8">
                 <AtomicUtilityBlock
                   title="Quick Support Summary"
-                  tldr="Need help with aima or eva? Use support.useaima.com for official help, Q&A, direct contact, and the fastest route to product guidance."
+                  tldr={`Need help with aima or eva? Use ${settings.supportUrl.replace(/^https?:\/\//, '')} for official help, Q&A, direct contact, and the fastest route to product guidance.`}
                   action={{
                     label: "Open eva",
-                    href: toolLinks.financeAI,
+                    href: settings.evaUrl || toolLinks.financeAI,
                     external: true,
                   }}
                   highlights={[
@@ -159,7 +176,7 @@ export default function Support() {
               </div>
 
               <div className="grid gap-4">
-                {supportChannels.map((channel) => {
+                {channels.map((channel) => {
                   const Icon = iconMap[channel.title as keyof typeof iconMap] ?? HelpCircle;
 
                   return (
@@ -212,10 +229,10 @@ export default function Support() {
         <div className="container flex flex-col gap-4 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} aima Support. Official help and guidance for aima and eva.</p>
           <div className="flex flex-wrap gap-4">
-            <a href={siteUrl} className="transition-colors hover:text-foreground">Main site</a>
-            <a href={`${siteUrl}/about`} className="transition-colors hover:text-foreground">About</a>
-            <a href={`${siteUrl}/privacy-policy`} className="transition-colors hover:text-foreground">Privacy</a>
-            <a href={`${siteUrl}/terms-of-service`} className="transition-colors hover:text-foreground">Terms</a>
+            <a href={settings.siteUrl} className="transition-colors hover:text-foreground">Main site</a>
+            <a href={`${settings.siteUrl}/about`} className="transition-colors hover:text-foreground">About</a>
+            <a href={`${settings.siteUrl}/privacy-policy`} className="transition-colors hover:text-foreground">Privacy</a>
+            <a href={`${settings.siteUrl}/terms-of-service`} className="transition-colors hover:text-foreground">Terms</a>
           </div>
         </div>
       </footer>

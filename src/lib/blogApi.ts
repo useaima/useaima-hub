@@ -10,6 +10,8 @@ type ApiError = {
   error?: string;
 };
 
+const BLOG_PUBLIC_API = "https://blog.useaima.com/api/public";
+
 async function parseJsonResponse<T>(response: Response): Promise<T> {
   const text = await response.text();
   const payload = text ? (JSON.parse(text) as T & ApiError) : ({} as T & ApiError);
@@ -71,16 +73,24 @@ export async function subscribeToBlogUpdates(input: {
   source: string;
   url?: string;
 }) {
-  const response = await fetch("/api/blog-subscribe", {
+  const response = await fetch(`${BLOG_PUBLIC_API}/subscribe`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(input),
+    body: JSON.stringify({
+      email: input.email,
+      source: input.source,
+      pageUrl: input.url,
+      origin: typeof window !== 'undefined' ? window.location.origin : undefined,
+      tags: ['useaima-hub'],
+    }),
   });
 
   return parseJsonResponse<{
     ok: boolean;
-    subscriberStored: boolean;
+    success?: boolean;
+    message?: string;
+    subscriber?: unknown;
   }>(response);
 }
