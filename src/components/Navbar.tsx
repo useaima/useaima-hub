@@ -4,6 +4,7 @@ import { Menu, X, Search } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
 import { BrandLogo } from "./BrandLogo";
 import { cn } from "@/lib/utils";
+import { toolLinks } from "@/content/siteContent";
 
 const SearchModal = lazy(() =>
   import("./SearchModal").then((module) => ({
@@ -13,7 +14,8 @@ const SearchModal = lazy(() =>
 
 const links = [
   { label: "Home", to: "/" },
-  { label: "Finance", to: "/finance" },
+  { label: "eva", to: "/finance" },
+  { label: "UTG", to: toolLinks.utg, external: true },
   { label: "Support", to: "/support" },
   { label: "Blog", to: "https://blog.useaima.com", external: true },
   { label: "FAQs", to: "/#faq" },

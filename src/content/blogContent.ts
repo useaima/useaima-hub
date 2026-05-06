@@ -973,7 +973,7 @@ export function getPostsByProduct(productName: string) {
 }
 
 export function getBlogPostUrl(slug: string) {
-  return `${blogUrl}/${slug}`;
+  return `${blogUrl}/article/${slug}`;
 }
 
 export function getBlogCategoryUrl(slug: string) {

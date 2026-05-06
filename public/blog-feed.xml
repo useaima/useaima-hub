@@ -6,70 +6,54 @@
     <atom:link href="https://blog.useaima.com/blog-feed.xml" rel="self" type="application/rss+xml" />
     <description>Editorial guides, protocol explainers, and personal finance thinking built around eva.</description>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 Apr 2026 21:28:49 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 02 May 2026 15:37:25 GMT</lastBuildDate>
     <item>
       <title>Inside eva: The Finance Workspace Built to Turn Spending Into Next Actions</title>
-      <link>https://blog.useaima.com/inside-eva-finance-workspace</link>
-      <guid>https://blog.useaima.com/inside-eva-finance-workspace</guid>
+      <link>https://blog.useaima.com/article/inside-eva-finance-workspace</link>
+      <guid>https://blog.useaima.com/article/inside-eva-finance-workspace</guid>
       <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
       <author>Alvins Mukabane</author>
-      <description>A close look at the eva workspace, subscriptions flow, and the design choices behind practical financial clarity.</description>
+      <description>eva is being built as a finance workspace that organizes attention, reduces ambiguity, and turns financial activity into clear next-step decisions.</description>
     </item>
     <item>
       <title>What Is Personal Finance? (Beginner Guide for 2026)</title>
-      <link>https://blog.useaima.com/what-is-personal-finance</link>
-      <guid>https://blog.useaima.com/what-is-personal-finance</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
+      <link>https://blog.useaima.com/article/personal-finance-beginner-guide-2026</link>
+      <guid>https://blog.useaima.com/article/personal-finance-beginner-guide-2026</guid>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
       <author>Alvins Mukabane</author>
-      <description>A simple guide to earning, spending, saving, investing, and using AI tools to improve financial habits.</description>
-    </item>
-    <item>
-      <title>Agent-to-Agent (A2A) Payments: The Future of Autonomous Commerce in 2026</title>
-      <link>https://blog.useaima.com/agent-to-agent-payments-explained</link>
-      <guid>https://blog.useaima.com/agent-to-agent-payments-explained</guid>
-      <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
-      <author>Adams Aura</author>
-      <description>An introduction to A2A payments, autonomous commerce, and AI-led financial execution.</description>
+      <description>A grounded beginner guide to personal finance in 2026, covering income, spending, saving, investing, protection, and how eva can support better habits.</description>
     </item>
     <item>
       <title>What Is KYA (Know Your Agent)? The Future of Financial Security in 2026</title>
-      <link>https://blog.useaima.com/what-is-kya-know-your-agent</link>
-      <guid>https://blog.useaima.com/what-is-kya-know-your-agent</guid>
-      <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
+      <link>https://blog.useaima.com/article/kya-know-your-agent-financial-security-2026</link>
+      <guid>https://blog.useaima.com/article/kya-know-your-agent-financial-security-2026</guid>
+      <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
       <author>Adams Aura</author>
-      <description>Learn what Know Your Agent means, how it differs from KYC, and why trust matters in autonomous finance.</description>
+      <description>KYA extends trust from the customer layer to the software agent layer so financial systems can verify which agent is acting and whether it should be trusted.</description>
     </item>
     <item>
       <title>A2A, AP2 &amp; KYA Explained: How AI Agents Will Control Financial Systems in 2026</title>
-      <link>https://blog.useaima.com/a2a-ap2-kya-explained</link>
-      <guid>https://blog.useaima.com/a2a-ap2-kya-explained</guid>
-      <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
+      <link>https://blog.useaima.com/article/a2a-ap2-kya-explained-ai-agents-financial-systems</link>
+      <guid>https://blog.useaima.com/article/a2a-ap2-kya-explained-ai-agents-financial-systems</guid>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
       <author>Adams Aura</author>
-      <description>A practical guide to A2A, AP2, and KYA in the emerging agent economy.</description>
+      <description>A practical guide to the communication, payment, and trust layers that make autonomous finance possible: A2A, AP2, and KYA.</description>
     </item>
     <item>
       <title>What Are AI Agents? The Complete Beginner Guide to Autonomous Finance in 2026</title>
-      <link>https://blog.useaima.com/what-are-ai-agents</link>
-      <guid>https://blog.useaima.com/what-are-ai-agents</guid>
-      <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
+      <link>https://blog.useaima.com/article/ai-agents-complete-beginner-guide-autonomous-finance</link>
+      <guid>https://blog.useaima.com/article/ai-agents-complete-beginner-guide-autonomous-finance</guid>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
       <author>Alvins Mukabane</author>
-      <description>A beginner-friendly guide to AI agents, autonomous finance, and why agent-style systems matter now.</description>
+      <description>A beginner-friendly guide to AI agents, how they differ from traditional software, and why they are becoming central to autonomous finance.</description>
     </item>
     <item>
-      <title>A Simple Weekly Finance Review You Can Run With AI</title>
-      <link>https://blog.useaima.com/weekly-finance-review-with-ai</link>
-      <guid>https://blog.useaima.com/weekly-finance-review-with-ai</guid>
-      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
-      <author>Alvins Mukabane</author>
-      <description>A practical AI-assisted finance review framework for tracking spending and making better decisions.</description>
-    </item>
-    <item>
-      <title>Why Most Budgets Fail and What to Track Instead</title>
-      <link>https://blog.useaima.com/why-most-budgets-fail-and-what-to-track-instead</link>
-      <guid>https://blog.useaima.com/why-most-budgets-fail-and-what-to-track-instead</guid>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 GMT</pubDate>
-      <author>Alvins Mukabane</author>
-      <description>A clearer way to review money behavior when static budgets stop being useful.</description>
+      <title>Agent-to-Agent (A2A) Payments: The Future of Autonomous Commerce in 2026</title>
+      <link>https://blog.useaima.com/article/a2a-payments-future-autonomous-commerce-2026</link>
+      <guid>https://blog.useaima.com/article/a2a-payments-future-autonomous-commerce-2026</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+      <author>Adams Aura</author>
+      <description>A2A payments are the transaction layer of autonomous commerce, allowing software agents to coordinate value movement under human-defined trust boundaries.</description>
     </item>
   </channel>
 </rss>

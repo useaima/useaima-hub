@@ -5,6 +5,8 @@ import { WhatIsaimaSection } from "@/components/WhatIsUseaimaSection";
 import { ProductEcosystem } from "@/components/ProductEcosystem";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
+import { LandingFlowPreview } from "@/components/FlowAtlas";
+import { LandingProjectImages } from "@/components/ProjectImageGallery";
 import { organizationSchemaId } from "@/content/entitySchema";
 import {
   brandKeywords,
@@ -58,7 +60,7 @@ const homeStructuredData = [
     },
     potentialAction: {
       "@type": "SearchAction",
-      target: `${blogUrl}/search?q={search_term_string}`,
+      target: `${blogUrl}/archive?search={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   },
@@ -93,8 +95,9 @@ const homeStructuredData = [
     "@type": "ItemList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "eva", url: toolLinks.financeAI },
-      { "@type": "ListItem", position: 2, name: "Blog", url: blogUrl },
-      { "@type": "ListItem", position: 3, name: "Support", url: "https://support.useaima.com" },
+      { "@type": "ListItem", position: 2, name: "Universal Transaction Gateway", url: toolLinks.utg },
+      { "@type": "ListItem", position: 3, name: "Blog", url: blogUrl },
+      { "@type": "ListItem", position: 4, name: "Support", url: "https://support.useaima.com" },
     ],
   },
 ];
@@ -143,10 +146,7 @@ function SectionPlaceholder({ minHeight, tinted = false }: { minHeight: number; 
   return (
     <section className={tinted ? "bg-muted/30 py-24" : "py-24"} aria-hidden="true">
       <div className="container">
-        <div
-          className="rounded-[2rem] border bg-muted/20"
-          style={{ minHeight }}
-        />
+        <div className="rounded-[2rem] border bg-muted/20" style={{ minHeight }} />
       </div>
     </section>
   );
@@ -155,7 +155,7 @@ function SectionPlaceholder({ minHeight, tinted = false }: { minHeight: number; 
 const Index = () => (
   <>
     <SEOHead
-      title="aima Official Website | Company Behind eva, the AI Finance Assistant"
+      title="aima Official Website | Company Behind eva and Universal Transaction Gateway"
       description={siteDescription}
       path="/"
       keywords={[...brandKeywords]}
@@ -172,6 +172,8 @@ const Index = () => (
     <main id="main-content">
       <HeroSection />
       <WhatIsaimaSection />
+      <LandingProjectImages />
+      <LandingFlowPreview />
       <ProductEcosystem />
       <DeferredHomeSections />
     </main>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { SectionHeader } from "@/components/SectionHeader";
 import { supportChannels as defaultSupportChannels } from "@/content/siteContent";
-import { buildSupportChannels, fetchSharedSiteSettings } from "@/lib/sharedPlatform";
+import { buildSupportChannels, fetchSharedPlatformData } from "@/lib/sharedPlatform";
 
 const supportIcons = [Mail, Instagram, Youtube, HelpCircle] as const;
 
@@ -13,9 +13,9 @@ export function SupportSection() {
 
   useEffect(() => {
     let active = true;
-    fetchSharedSiteSettings().then((settings) => {
+    fetchSharedPlatformData().then((platform) => {
       if (!active) return;
-      setChannels(buildSupportChannels(settings));
+      setChannels(buildSupportChannels(platform.settings));
     });
     return () => {
       active = false;
@@ -27,16 +27,15 @@ export function SupportSection() {
       <div className="container">
         <SectionHeader
           title="Support & Help"
-          subtitle="Need help with aima or eva? The support flow is built around direct contact, quick answers, and a dedicated support hub at support.useaima.com."
+          subtitle="Need help with aima, eva, or Universal Transaction Gateway? The support flow is built around direct contact, quick answers, and a dedicated help center at support.useaima.com."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
           <div className="rounded-[2rem] border bg-card p-8 shadow-sm">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">Support Hub</p>
-            <h3 className="mt-4 text-3xl font-semibold tracking-tight">Get help, product guidance, and Q&A in one place</h3>
+            <h3 className="mt-4 text-3xl font-semibold tracking-tight">Get product guidance, rollout help, and Q&amp;A in one place</h3>
             <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
-              aima support is designed to make the product feel dependable. Use the support center for product help,
-              onboarding questions, direct contact options, and the fastest route to eva-related answers.
+              aima support is designed to make the product experience feel dependable. Use the help center for EVA workflows, UTG setup and troubleshooting, onboarding questions, direct contact options, and the fastest route to answers.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild className="rounded-full">
@@ -51,8 +50,8 @@ export function SupportSection() {
             <div className="mt-8 rounded-[1.5rem] border bg-muted/20 p-6">
               <p className="text-sm font-semibold">What you can do there</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
-                <li>Find direct help for eva and the main aima website.</li>
-                <li>Get quick Q&A answers without searching across multiple pages.</li>
+                <li>Find direct help for both EVA and UTG.</li>
+                <li>Read official support articles without hunting across different repos and sites.</li>
                 <li>Use the official channels for support, updates, and walkthroughs.</li>
               </ul>
             </div>

@@ -4,9 +4,11 @@ import { BrandLogo } from "./BrandLogo";
 
 const sections = [
   {
-    title: "Product",
+    title: "Products",
     links: [
       { label: "eva", to: toolLinks.financeAI, external: true },
+      { label: "Universal Transaction Gateway", to: toolLinks.utg, external: true },
+      { label: "UTG GitHub", to: toolLinks.utgRepo, external: true },
     ],
   },
   {
@@ -34,8 +36,8 @@ export function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <BrandLogo size="lg" />
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground" style={{ maxWidth: "28ch" }}>
-              aima builds eva, the AI finance assistant designed to turn financial activity into clearer next steps.
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground" style={{ maxWidth: "30ch" }}>
+              aima builds eva and Universal Transaction Gateway to make financial intelligence and agentic transaction workflows more trustworthy, usable, and connected.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">{siteEmail}</p>
           </div>
@@ -56,7 +58,7 @@ export function Footer() {
                         {l.label}
                       </Link>
                     </li>
-                  )
+                  ),
                 )}
               </ul>
             </div>

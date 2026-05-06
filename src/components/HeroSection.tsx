@@ -21,7 +21,6 @@ export function HeroSection() {
         }}
       />
 
-      {/* Gradient line accent */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-px w-[60%] -translate-x-1/2 bg-gradient-to-r from-transparent via-primary/45 to-transparent" />
 
       <div className="container relative flex min-h-[72vh] flex-col items-center justify-center py-20 text-center sm:min-h-[85vh] sm:py-24">
@@ -40,21 +39,20 @@ export function HeroSection() {
           }`}
           style={{ transitionDelay: "120ms", lineHeight: 1.08 }}
         >
-          aima builds eva,
+          aima builds products for
           <br />
           <span className="bg-gradient-to-r from-foreground via-primary to-warning bg-clip-text text-transparent">
-            an AI finance assistant for everyday money decisions.
+            financial clarity and safe agentic commerce.
           </span>
         </h1>
 
         <p
-          className={`mt-6 max-w-[52ch] text-pretty text-lg leading-relaxed text-muted-foreground transition-all duration-700 ease-out ${
+          className={`mt-6 max-w-[54ch] text-pretty text-lg leading-relaxed text-muted-foreground transition-all duration-700 ease-out ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "240ms" }}
         >
-          {siteTagline} The platform is built to help people understand spending, catch unusual financial behavior
-          earlier, and move from raw transaction data to clearer action with less guesswork.
+          {siteTagline} EVA helps people make clearer money decisions, while Universal Transaction Gateway gives AI-native systems a safer, human-approved way to coordinate transactions.
         </p>
 
         <div
@@ -63,7 +61,7 @@ export function HeroSection() {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          {["Live product: eva", "AI finance assistant", "Support, guides, and product clarity"].map((item) => (
+          {["Live product: eva", "Beta product: UTG", "Support, guides, and infrastructure clarity"].map((item) => (
             <span key={item} className="rounded-full border bg-background/70 px-3 py-1.5">
               {item}
             </span>
@@ -82,9 +80,9 @@ export function HeroSection() {
             </a>
           </Button>
           <Button variant="outline" size="lg" className="gap-2 active:scale-[0.97]" asChild>
-            <Link to="/about">
-              About Us <ArrowRight className="h-4 w-4" />
-            </Link>
+            <a href={toolLinks.utg} target="_blank" rel="noopener noreferrer">
+              Open UTG <ArrowRight className="h-4 w-4" />
+            </a>
           </Button>
           <Button variant="ghost" size="lg" className="gap-2 active:scale-[0.97]" asChild>
             <Link to="/support">
@@ -94,7 +92,7 @@ export function HeroSection() {
         </div>
 
         <p
-          className={`mt-5 text-sm text-muted-foreground transition-all duration-700 ease-out ${
+          className={`mt-5 max-w-3xl text-sm text-muted-foreground transition-all duration-700 ease-out ${
             mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "420ms" }}
@@ -102,7 +100,6 @@ export function HeroSection() {
           {siteBrandSummary}
         </p>
 
-        {/* Scroll indicator */}
         <div
           className={`absolute bottom-8 left-1/2 -translate-x-1/2 transition-all duration-700 ease-out ${
             mounted ? "opacity-60 translate-y-0" : "opacity-0 translate-y-4"
@@ -110,7 +107,7 @@ export function HeroSection() {
           style={{ transitionDelay: "600ms" }}
         >
           <div className="flex flex-col items-center gap-2">
-            <div className="h-8 w-5 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-1.5">
+            <div className="flex h-8 w-5 justify-center rounded-full border-2 border-muted-foreground/30 pt-1.5">
               <div className="h-1.5 w-1 rounded-full bg-muted-foreground/50" />
             </div>
           </div>

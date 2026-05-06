@@ -4,11 +4,11 @@ export const blogUrl = "https://blog.useaima.com";
 export const supportUrl = "https://support.useaima.com";
 export const siteEmail = "help@useaima.com";
 export const siteDescription =
-  "aima is the official company behind eva, an AI finance assistant built to help people understand spending, spot anomalies early, and make clearer money decisions.";
+  "aima builds eva and Universal Transaction Gateway, spanning financial clarity for people and safer infrastructure for agentic commerce.";
 export const siteTagline =
-  "aima builds eva, an AI finance assistant for spending analysis, anomaly detection, and everyday financial decision support.";
+  "aima builds eva for financial clarity and Universal Transaction Gateway for safe, human-approved agentic commerce.";
 export const siteBrandSummary =
-  "aima is the official home of eva, a live AI finance assistant that turns financial activity into alerts, summaries, and practical next-step guidance.";
+  "aima is the official home of eva and Universal Transaction Gateway, combining consumer financial intelligence with safer infrastructure for agentic transactions.";
 export const brandKeywords = [
   "aima",
   "useaima",
@@ -17,16 +17,51 @@ export const brandKeywords = [
   "aima blog",
   "eva by aima",
   "eva.useaima.com",
-  "eva finance assistant",
+  "Universal Transaction Gateway",
+  "UTG",
+  "utg.useaima.com",
+  "agentic commerce",
   "AI finance assistant",
-  "AI finance startup",
   "aima support",
 ] as const;
 
 export const toolLinks = {
   eva: "https://eva.useaima.com",
   financeAI: "https://eva.useaima.com",
+  utg: "https://utg.useaima.com",
+  utgRepo: "https://github.com/useaima/universal-gateway",
 } as const;
+
+export const defaultPlatformProducts = [
+  {
+    slug: "eva",
+    name: "eva",
+    status: "Live",
+    summary: "AI finance assistant for spending clarity, anomaly detection, subscriptions, and better next-step decisions.",
+    description:
+      "eva helps people understand financial behavior, review recurring costs, spot unusual activity earlier, and turn raw transaction data into calmer action.",
+    primaryUrl: toolLinks.eva,
+    primaryLabel: "Open eva",
+    secondaryUrl: blogUrl,
+    secondaryLabel: "Read eva guides",
+    supportLabel: "Finance intelligence",
+    categoryLabel: "Product",
+  },
+  {
+    slug: "utg",
+    name: "Universal Transaction Gateway",
+    status: "Beta",
+    summary: "Experimental human-approved transaction infrastructure for agentic commerce, safer payment orchestration, and auditable execution.",
+    description:
+      "UTG is AIMA's experimental gateway for letting AI agents coordinate transaction intent safely through approvals, idempotency, and non-custodial control boundaries.",
+    primaryUrl: toolLinks.utg,
+    primaryLabel: "Open UTG",
+    secondaryUrl: toolLinks.utgRepo,
+    secondaryLabel: "View GitHub",
+    supportLabel: "Agentic commerce infrastructure",
+    categoryLabel: "Infrastructure",
+  },
+] as const;
 
 export const supportLinks = {
   home: supportUrl,
@@ -41,25 +76,25 @@ export const supportLinks = {
 export const supportChannels = [
   {
     title: "Email support",
-    description: "Reach the team directly for product questions, startup inquiries, or help using eva.",
+    description: "Reach the team directly for questions about eva, UTG, partnerships, or rollout support.",
     href: supportLinks.email,
     label: supportLinks.emailAddress,
   },
   {
     title: "Instagram updates",
-    description: "Follow aima for quick updates, product drops, and support prompts.",
+    description: "Follow aima for product drops, explainers, and support prompts across EVA and UTG.",
     href: supportLinks.instagram,
     label: supportLinks.instagramHandle,
   },
   {
     title: "YouTube explainers",
-    description: "Watch explainers, walkthroughs, and product updates from the aima team.",
+    description: "Watch walkthroughs, launch explainers, and product thinking from the aima team.",
     href: supportLinks.youtube,
     label: supportLinks.youtubeLabel,
   },
   {
     title: "Support hub",
-    description: "Use the support center for help, Q&A, product guidance, and the fastest route to answers.",
+    description: "Use the help center for official EVA and UTG guidance, Q&A, troubleshooting, and direct contact paths.",
     href: supportLinks.home,
     label: "support.useaima.com",
   },
@@ -69,52 +104,32 @@ export const faqItems = [
   {
     question: "What is aima?",
     answer:
-      "aima is the official platform behind eva, an AI finance assistant designed to help people understand spending, track patterns, and make better financial decisions.",
+      "aima is the company behind eva and Universal Transaction Gateway. It builds AI products for financial clarity and safer agentic commerce.",
   },
   {
-    question: "What kind of tools does aima offer?",
+    question: "What products are live today?",
     answer:
-      "aima currently focuses on eva, the AI finance assistant built for financial guidance, anomaly detection, and decision support.",
+      "aima currently operates eva, the AI finance assistant, and Universal Transaction Gateway, the human-approved transaction layer for agentic commerce that is currently in beta.",
   },
   {
-    question: "Are the tools free to use?",
+    question: "How do eva and UTG differ?",
     answer:
-      "Some tools may be free during early stages or offer limited free access. As the platform grows, certain advanced features may require a subscription or premium access.",
+      "eva is built for people who want clearer spending visibility and financial next-step guidance. UTG is built as infrastructure for safely coordinating agent-driven transaction flows with human approval and auditability.",
   },
   {
-    question: "How is my data handled?",
+    question: "Can I use multiple AIMA products together?",
     answer:
-      "aima is designed with privacy in mind. User data is processed securely and is not shared without consent. The goal is to provide intelligent insights while maintaining trust and data protection.",
-  },
-  {
-    question: "Can I use multiple tools together?",
-    answer:
-      "Right now, aima is focused on eva as the main product experience. Future tools may be added over time, but the current public platform centers on finance.",
+      "Yes. aima is designed as a connected platform. Readers can learn through the blog, get help through the support center, use eva for finance workflows, and use UTG for agentic transaction infrastructure.",
   },
   {
     question: "Who is aima for?",
     answer:
-      "aima is designed for students, professionals, content creators, developers, and anyone looking to improve productivity and decision-making using AI.",
+      "aima serves individuals who want better financial clarity, plus builders, operators, and teams working on AI-assisted transaction systems and agentic commerce.",
   },
   {
     question: "Does aima replace human decision-making?",
     answer:
-      "No. aima assists and guides decisions but does not replace human judgment. It provides insights, recommendations, and analysis to help users make better choices.",
-  },
-  {
-    question: "How accurate are the AI recommendations?",
-    answer:
-      "The system is designed to provide useful and data-driven insights, but results may vary depending on the quality of the input data. Users should always review recommendations before acting on them.",
-  },
-  {
-    question: "Is aima a single app or multiple platforms?",
-    answer:
-      "Today, aima is primarily the home of eva. The platform may expand in the future, but the current live product focus is the finance experience.",
-  },
-  {
-    question: "How can I stay updated with new features?",
-    answer:
-      "You can stay updated by visiting the aima blog, checking product pages like Finance, and following new product updates and changelogs across the platform.",
+      "No. aima builds systems that improve visibility, support better judgment, and keep humans in control where decisions and transactions matter.",
   },
   {
     question: "How do I get help and support?",
@@ -127,26 +142,26 @@ export const supportFaqItems = [
   {
     question: "What is aima?",
     answer:
-      "aima is the company behind eva, the AI finance assistant focused on spending clarity, anomaly detection, and better everyday money decisions.",
+      "aima is the company behind eva and Universal Transaction Gateway. The support system covers both products through one official help layer.",
   },
   {
     question: "What is eva?",
     answer:
-      "eva is the live product from aima. It helps people review financial activity, understand spending behavior, spot risks earlier, and make smarter next decisions.",
+      "eva is AIMA's live AI finance assistant. It helps people understand spending, review subscriptions, spot risks earlier, and make smarter next decisions.",
   },
   {
-    question: "Where do I get support for eva?",
+    question: "What is Universal Transaction Gateway?",
+    answer:
+      "Universal Transaction Gateway is AIMA's live infrastructure product for agentic commerce. It adds approvals, safety boundaries, and transaction control for AI-driven payment workflows.",
+  },
+  {
+    question: "Where do I get support for EVA and UTG?",
     answer:
       "The official support hub is support.useaima.com. You can also email help@useaima.com for direct product and account support.",
   },
   {
-    question: "Where can I learn more about the product?",
+    question: "Where can I learn more about the products?",
     answer:
-      "You can explore eva at eva.useaima.com, read practical explainers on blog.useaima.com, and visit useaima.com/about for the company story and product direction.",
-  },
-  {
-    question: "Can I contact the team on social media?",
-    answer:
-      "Yes. aima shares updates and support prompts on Instagram at aima.ai123 and on the official aima YouTube channel.",
+      "You can explore eva at eva.useaima.com, UTG at utg.useaima.com, read practical explainers on blog.useaima.com, and visit useaima.com/about for the company story and product direction.",
   },
 ] as const;

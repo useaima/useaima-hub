@@ -46,7 +46,7 @@ const structuredData = [
     hasPart: latestBlogPosts.slice(0, 6).map((post) => ({
       "@type": "BlogPosting",
       headline: post.title,
-      url: `${blogUrl}/${post.slug}`,
+      url: `${blogUrl}/article/${post.slug}`,
       datePublished: post.publishedAt,
     })),
   },
@@ -57,7 +57,7 @@ const structuredData = [
     itemListElement: latestBlogPosts.slice(0, 6).map((post, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: `${blogUrl}/${post.slug}`,
+      url: `${blogUrl}/article/${post.slug}`,
       name: post.title,
     })),
   },

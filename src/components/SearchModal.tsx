@@ -14,10 +14,12 @@ interface SearchItem {
 }
 
 const staticSearchData: SearchItem[] = [
-  { title: "What is aima?", description: "Overview of aima and eva, the AI finance assistant", category: "Page", to: "/#what-is-aima" },
-  { title: "eva", description: "AI financial advisor — tracks spending and provides insights", category: "Product", to: toolLinks.financeAI, external: true },
-  { title: "Finance", description: "AI-powered financial intelligence hub", category: "Page", to: "/finance" },
-  { title: "Support", description: "Help, support, and Q&A for aima and eva", category: "Page", to: "/support" },
+  { title: "What is aima?", description: "Overview of aima, eva, and Universal Transaction Gateway", category: "Page", to: "/#what-is-aima" },
+  { title: "eva", description: "AI finance assistant for spending clarity and next-step guidance", category: "Product", to: toolLinks.financeAI, external: true },
+  { title: "Universal Transaction Gateway", description: "Human-approved transaction infrastructure for agentic commerce", category: "Product", to: toolLinks.utg, external: true },
+  { title: "UTG GitHub", description: "Developer repo for Universal Transaction Gateway", category: "Product", to: toolLinks.utgRepo, external: true },
+  { title: "Finance", description: "AI-powered financial intelligence hub for eva", category: "Page", to: "/finance" },
+  { title: "Support", description: "Help, support, and Q&A for aima, eva, and UTG", category: "Page", to: "/support" },
   { title: "About Us", description: "Learn about the aima mission, vision, and approach", category: "Page", to: "/about" },
   { title: "Privacy Policy", description: "How aima handles user data and privacy", category: "Page", to: "/privacy-policy" },
   { title: "Terms of Service", description: "Terms that govern use of the aima platform", category: "Page", to: "/terms-of-service" },
@@ -48,7 +50,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
         (item) =>
           item.title.toLowerCase().includes(query.toLowerCase()) ||
           item.description.toLowerCase().includes(query.toLowerCase()) ||
-          item.category.toLowerCase().includes(query.toLowerCase())
+          item.category.toLowerCase().includes(query.toLowerCase()),
       )
     : [];
 
@@ -56,7 +58,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
     (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     },
-    [onClose]
+    [onClose],
   );
 
   useEffect(() => {
@@ -85,14 +87,14 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh]">
       <div className="absolute inset-0 bg-background/70 md:backdrop-blur-sm" onClick={onClose} />
-      <div className="relative w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl animate-fade-in mx-4">
+      <div className="relative mx-4 w-full max-w-lg rounded-xl border border-border bg-card shadow-2xl animate-fade-in">
         <div className="flex items-center gap-3 border-b border-border px-4 py-3">
           <Search className="h-4 w-4 shrink-0 text-muted-foreground" />
           <input
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search eva, pages, blog…"
+            placeholder="Search eva, UTG, pages, blog…"
             className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
           />
           <button onClick={onClose} className="rounded p-1 text-muted-foreground hover:text-foreground active:scale-95">
@@ -109,12 +111,12 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
           )}
           {filtered.map((item) => {
             const inner = (
-              <div className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors hover:bg-accent/60 group cursor-pointer">
+              <div className="group flex cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-colors hover:bg-accent/60">
                 <span className={cn("shrink-0 rounded-md px-2 py-0.5 text-xs font-medium", categoryColor[item.category])}>
                   {item.category}
                 </span>
                 <div className="min-w-0 flex-1">
-                  <p className="font-medium truncate">{item.title}</p>
+                  <p className="truncate font-medium">{item.title}</p>
                   <p className="truncate text-xs text-muted-foreground">{item.description}</p>
                 </div>
                 <ArrowRight className="h-3.5 w-3.5 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />

@@ -1,44 +1,45 @@
-import { DollarSign, ArrowRight } from "lucide-react";
+import { ArrowRight, ShieldCheck, WalletCards } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { SectionHeader } from "./SectionHeader";
 import { cn } from "@/lib/utils";
-import { toolLinks } from "@/content/siteContent";
+import { defaultPlatformProducts } from "@/content/siteContent";
+import { fetchSharedPlatformData, type SharedProduct } from "@/lib/sharedPlatform";
 
-const products = [
-  {
-    name: "eva",
-    icon: DollarSign,
-    logoSrc: "/eva-logo.png",
-    logoFrameClass:
-      "flex min-h-16 flex-1 items-center rounded-2xl border border-primary/15 bg-secondary/80 px-4 py-3 shadow-inner",
-    logoImageClass: "h-10 w-auto max-w-full object-contain",
-    logoWidth: 547,
-    logoHeight: 374,
-    status: "Live" as const,
-    description: "AI financial advisor that tracks spending behavior, provides real-time insights, and detects risks & opportunities.",
-    features: ["Spending behavior tracking", "Real-time financial insights", "Risk & opportunity detection"],
-    link: toolLinks.financeAI,
-    external: true,
-    ctaLabel: "Open eva",
-  },
-];
-
-const statusColors = {
-  Live: "bg-primary/10 text-primary",
-  Beta: "bg-accent/20 text-accent-foreground",
-};
+const iconMap = {
+  eva: WalletCards,
+  utg: ShieldCheck,
+} as const;
 
 export function ProductEcosystem() {
+  const [products, setProducts] = useState<SharedProduct[]>([...defaultPlatformProducts]);
+
+  useEffect(() => {
+    let active = true;
+    fetchSharedPlatformData().then((platform) => {
+      if (!active) return;
+      setProducts(platform.products);
+    });
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  const orderedProducts = useMemo(
+    () => [...products].sort((left, right) => Number(right.slug === "eva") - Number(left.slug === "eva")),
+    [products],
+  );
+
   return (
     <section id="products" className="py-24">
       <div className="container">
         <SectionHeader
-          title="eva"
-          subtitle="eva is the live product from aima. It is an AI finance assistant built to help people understand spending, detect anomalies, and make clearer money decisions with less manual effort."
+          title="Current Products"
+          subtitle="aima now operates across eva for financial clarity and Universal Transaction Gateway for safer agentic transactions in beta."
         />
-        <div className="mx-auto grid max-w-3xl gap-6">
-          {products.map((p, i) => (
-            <ProductCard key={p.name} product={p} index={i} />
+        <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
+          {orderedProducts.map((product, index) => (
+            <ProductCard key={product.slug} product={product} index={index} />
           ))}
         </div>
       </div>
@@ -46,69 +47,60 @@ export function ProductEcosystem() {
   );
 }
 
-function ProductCard({ product, index }: { product: (typeof products)[number]; index: number }) {
+function ProductCard({ product, index }: { product: SharedProduct; index: number }) {
   const { ref, isVisible, shouldAnimate } = useScrollReveal();
-  const Icon = product.icon;
-  const hasLogo = "logoSrc" in product;
+  const Icon = iconMap[product.slug];
 
   return (
-    <div
+    <article
       ref={ref}
       className={cn(
-        "group relative flex flex-col rounded-xl border bg-card p-6 shadow-sm transition-shadow duration-300 hover:shadow-lg",
+        "group relative flex h-full flex-col rounded-[1.75rem] border bg-card p-7 shadow-sm transition-shadow duration-300 hover:shadow-lg",
         shouldAnimate ? "opacity-0" : "opacity-100",
-        isVisible && "animate-fade-in"
+        isVisible && "animate-fade-in",
       )}
       style={{ animationDelay: `${index * 80}ms` }}
     >
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <div
-          className={cn(
-            "transition-transform duration-200 group-hover:scale-[1.02]",
-            hasLogo
-              ? product.logoFrameClass
-              : "flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary"
-          )}
-        >
-          {hasLogo ? (
-            <img
-              src={product.logoSrc}
-              alt=""
-              aria-hidden="true"
-              width={product.logoWidth}
-              height={product.logoHeight}
-              className={product.logoImageClass}
-              draggable="false"
-              loading="lazy"
-              decoding="async"
-            />
-          ) : (
-            <Icon className="h-5 w-5" />
-          )}
+      <div className="mb-5 flex items-start justify-between gap-4">
+        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+          <Icon className="h-5 w-5" />
         </div>
-        <span className={cn("rounded-full px-2.5 py-0.5 text-xs font-medium", statusColors[product.status])}>
+        <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
           {product.status}
         </span>
       </div>
-      <h3 className="text-lg font-semibold">{product.name}</h3>
-      <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{product.description}</p>
-      <ul className="mt-4 space-y-1.5">
-        {product.features.map((f) => (
-          <li key={f} className="flex items-center gap-2 text-xs text-muted-foreground">
-            <span className="h-1 w-1 rounded-full bg-primary" />
-            {f}
-          </li>
-        ))}
-      </ul>
-      <a
-        href={product.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80 active:scale-[0.97]"
-        aria-label={product.ctaLabel}
-      >
-        {product.ctaLabel} <ArrowRight className="h-3.5 w-3.5" />
-      </a>
-    </div>
+
+      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
+        {product.categoryLabel || "Product"}
+      </p>
+      <h3 className="mt-3 text-2xl font-semibold tracking-tight text-foreground">{product.name}</h3>
+      <p className="mt-4 text-base leading-8 text-muted-foreground">{product.description}</p>
+
+      <div className="mt-6 rounded-[1.5rem] border bg-muted/20 p-5">
+        <p className="text-sm font-semibold text-foreground">Why it matters</p>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">{product.summary}</p>
+      </div>
+
+      <div className="mt-7 flex flex-wrap gap-3">
+        <a
+          href={product.primaryUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+        >
+          {product.primaryLabel} <ArrowRight className="h-4 w-4" />
+        </a>
+        {product.secondaryUrl ? (
+          <a
+            href={product.secondaryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full border bg-background px-5 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary hover:text-primary"
+          >
+            {product.secondaryLabel || "Learn more"}
+          </a>
+        ) : null}
+      </div>
+    </article>
   );
 }

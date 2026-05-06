@@ -13,7 +13,7 @@ import { BlogAuthorProfile } from "@/content/blogAuthors";
 
 export type StructuredDataEntry = Record<string, unknown>;
 
-export type AgentKey = "eva";
+export type AgentKey = "eva" | "utg";
 
 export type AgentProfile = {
   key: AgentKey;
@@ -42,7 +42,19 @@ export const agentProfiles: AgentProfile[] = [
     description: "AI finance assistant for spending visibility, anomaly detection, subscription review, and clearer next-step guidance.",
     utilityTldr: "eva helps users understand spending, spot risks early, and turn financial signals into next-step guidance.",
     previewLabel: "Open eva",
-    relatedKeys: [],
+    relatedKeys: ["utg"],
+  },
+  {
+    key: "utg",
+    name: "Universal Transaction Gateway",
+    applicationCategory: "BusinessApplication",
+    pageHref: toolLinks.utg,
+    toolHref: toolLinks.utg,
+    logoPath: "/aima-mark.png",
+    description: "Human-approved infrastructure for agentic commerce, transaction safety, idempotency, and safer AI payment orchestration.",
+    utilityTldr: "UTG lets teams coordinate agent-driven transaction flows with approvals, logs, and safer execution boundaries.",
+    previewLabel: "Open UTG",
+    relatedKeys: ["eva"],
   },
 ];
 
@@ -148,6 +160,9 @@ export const baseStructuredData: StructuredDataEntry[] = [
       "Personal finance intelligence",
       "Autonomous finance",
       "Spending analysis",
+      "Agentic commerce",
+      "Transaction safety",
+      "Human approval flows",
       "AP2",
       "A2A",
       "KYA",
@@ -174,7 +189,7 @@ export const baseStructuredData: StructuredDataEntry[] = [
         termCode: "AP2",
         description:
           "AP2 is the payment layer that helps AI agents initiate and coordinate transactions with explicit policy limits and safer execution rules.",
-        url: `${blogUrl}/a2a-ap2-kya-explained`,
+        url: `${blogUrl}/article/a2a-ap2-kya-explained`,
         inDefinedTermSet: {
           "@id": protocolSchemaId,
         },
@@ -187,7 +202,7 @@ export const baseStructuredData: StructuredDataEntry[] = [
         termCode: "A2A",
         description:
           "A2A describes the communication layer that allows AI agents to exchange context, coordinate actions, and complete workflows together.",
-        url: `${blogUrl}/agent-to-agent-payments-explained`,
+        url: `${blogUrl}/article/agent-to-agent-payments-explained`,
         inDefinedTermSet: {
           "@id": protocolSchemaId,
         },
@@ -200,7 +215,7 @@ export const baseStructuredData: StructuredDataEntry[] = [
         termCode: "KYA",
         description:
           "KYA is the trust layer for autonomous systems, verifying which agent is acting, what it is allowed to do, and whether its behavior is still trustworthy.",
-        url: `${blogUrl}/what-is-kya-know-your-agent`,
+        url: `${blogUrl}/article/what-is-kya-know-your-agent`,
         inDefinedTermSet: {
           "@id": protocolSchemaId,
         },
@@ -278,21 +293,21 @@ export function getProtocolContext(title: string, tags: string[]) {
   if (haystack.includes("AP2")) {
     return {
       label: "AP2",
-      href: `${blogUrl}/a2a-ap2-kya-explained`,
+      href: `${blogUrl}/article/a2a-ap2-kya-explained`,
     };
   }
 
   if (haystack.includes("A2A")) {
     return {
       label: "A2A",
-      href: `${blogUrl}/agent-to-agent-payments-explained`,
+      href: `${blogUrl}/article/agent-to-agent-payments-explained`,
     };
   }
 
   if (haystack.includes("KYA")) {
     return {
       label: "KYA",
-      href: `${blogUrl}/what-is-kya-know-your-agent`,
+      href: `${blogUrl}/article/what-is-kya-know-your-agent`,
     };
   }
 
@@ -312,9 +327,16 @@ export function inferRelevantAgentKeys(
     }
   };
 
-  if (
-    /eva|finance|budget|spending|money|payments?|ap2|a2a|kya|autonomous finance|subscription/.test(haystack)
-  ) {
+  if (/eva|finance|budget|spending|money|payments?|autonomous finance|subscription/.test(haystack)) {
+    add("eva");
+  }
+
+  if (/utg|universal transaction gateway|agentic commerce|idempotency|human approval|settlement|gateway/.test(haystack)) {
+    add("utg");
+  }
+
+  if (/ap2|a2a|kya/.test(haystack)) {
+    add("utg");
     add("eva");
   }
 

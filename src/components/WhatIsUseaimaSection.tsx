@@ -14,15 +14,15 @@ const pillars = [
     icon: BrainCircuit,
   },
   {
-    title: "One live product with a clear purpose",
+    title: "Two current products with clear roles",
     description:
-      "eva is the current public product. It is built to help users review spending, spot patterns, detect anomalies, and make better financial decisions faster.",
+      "eva helps people understand financial behavior, while UTG gives teams a safer transaction layer for agentic commerce and human approval flows.",
     icon: BrainCircuit,
   },
   {
     title: "Product, support, and education together",
     description:
-      "The main site, blog, and support hub are designed to work together so visitors can understand the product, explore guides, and get help quickly.",
+      "The main site, editorial blog, and support hub are designed to work together so visitors can understand products, explore guides, and get help quickly.",
     icon: ShieldCheck,
   },
 ];
@@ -33,23 +33,21 @@ export function WhatIsaimaSection() {
       <div className="container">
         <SectionHeader
           title="What Is aima?"
-          subtitle="aima is the company building eva, the AI finance assistant designed to turn financial activity into clearer decisions, useful alerts, and practical support."
+          subtitle="aima is the company building eva and Universal Transaction Gateway, combining financial intelligence and safe transaction infrastructure in one connected platform."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="rounded-3xl border bg-card p-8 shadow-sm">
             <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
               <Sparkles className="h-3.5 w-3.5" />
-              Built to assist, guide, and simplify
+              Built to assist, guide, and safeguard
             </div>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-              {siteBrandSummary} Instead of presenting a broad list of unfinished products, aima is intentionally
-              focused on building eva well first. That means clearer product positioning, stronger support, and a more
-              credible experience for users, partners, and startup programs reviewing the company.
+              {siteBrandSummary} That means consumer financial clarity on one side and a safer control layer for agentic transactions on the other. The blog and help center then turn those products into something people can understand, evaluate, and use with confidence.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button size="lg" asChild>
-                <a href="#products">Explore eva</a>
+                <a href="#products">Explore products</a>
               </Button>
               <Button variant="outline" size="lg" asChild>
                 <Link to="/about">About Us</Link>

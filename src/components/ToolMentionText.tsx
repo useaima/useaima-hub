@@ -7,6 +7,8 @@ type ToolMentionTextProps = {
 
 const toolMentionMap = {
   eva: toolLinks.financeAI,
+  UTG: toolLinks.utg,
+  "Universal Transaction Gateway": toolLinks.utg,
 } as const;
 
 const toolMentionPattern = new RegExp(`\\b(${Object.keys(toolMentionMap).join("|")})\\b`, "g");

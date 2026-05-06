@@ -88,7 +88,7 @@ const Finance = () => {
                   </a>
                 </Button>
                 <Button variant="outline" asChild className="rounded-full border-primary/25">
-                  <a href="https://blog.useaima.com/category/finance" target="_blank" rel="noopener noreferrer">
+                  <a href="https://blog.useaima.com/category/personal-finance" target="_blank" rel="noopener noreferrer">
                     Explore finance guides
                   </a>
                 </Button>
@@ -200,7 +200,7 @@ const Finance = () => {
             </div>
             <div className="mt-10 flex justify-center">
               <Button variant="outline" asChild className="rounded-full">
-                <a href="https://blog.useaima.com/category/finance" target="_blank" rel="noopener noreferrer">
+                <a href="https://blog.useaima.com/category/personal-finance" target="_blank" rel="noopener noreferrer">
                   View all finance articles
                 </a>
               </Button>

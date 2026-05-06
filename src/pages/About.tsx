@@ -1,23 +1,24 @@
 import { ArrowRight, Bot, BrainCircuit, BriefcaseBusiness, Lightbulb, ShieldCheck } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
+import { DocumentationFlowAtlas } from "@/components/FlowAtlas";
+import { DocumentationProjectImages } from "@/components/ProjectImageGallery";
 import { siteName, siteUrl, supportUrl, toolLinks } from "@/content/siteContent";
 
 const focusAreas = [
   {
     title: "Financial clarity",
-    description: "Helping users understand spending patterns, anomalies, and better next steps with more context and guidance.",
+    description: "Helping users understand spending patterns, anomalies, subscriptions, and better next steps with EVA.",
   },
   {
-    title: "AI-assisted reviews",
-    description: "Turning raw financial activity into summaries, alerts, and practical decision support people can act on.",
+    title: "Safer agentic execution",
+    description: "Giving AI-native systems a human-approved, auditable path for transaction coordination through UTG.",
   },
   {
     title: "Trustworthy product focus",
-    description: "Building one useful product well before expanding into additional public tools or categories.",
+    description: "Shipping clear products, support surfaces, and educational content instead of vague AI branding alone.",
   },
 ];
 
@@ -34,7 +35,7 @@ const principles = [
   },
   {
     title: "Integration Over Isolation",
-    description: "We focus on making eva genuinely useful in real financial workflows before expanding the platform further.",
+    description: "We connect products, support, and education so eva and UTG make sense as part of one AIMA platform.",
     icon: BrainCircuit,
   },
 ];
@@ -46,7 +47,7 @@ const aboutStructuredData = [
     name: "About aima",
     url: `${siteUrl}/about`,
     description:
-      "Learn about aima, the platform behind eva, an AI finance assistant focused on clearer money decisions.",
+      "Learn about aima, the company behind eva and Universal Transaction Gateway.",
     isPartOf: siteUrl,
     about: {
       "@type": "Organization",
@@ -62,9 +63,9 @@ const About = () => {
     <>
       <SEOHead
         title="About aima"
-        description="Learn what aima is, what eva does today, and the vision behind the platform."
+        description="Learn what aima is, what EVA and UTG do today, and the vision behind the platform."
         path="/about"
-        keywords={["about aima", "AI startup", "AI platform", "aima vision"]}
+        keywords={["about aima", "AI startup", "eva", "UTG", "agentic commerce"]}
         structuredData={aboutStructuredData}
       />
       <Navbar />
@@ -78,13 +79,10 @@ const About = () => {
                   About aima
                 </div>
                 <h1 className="mt-6 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
-                  Building a focused AI finance product that actively assists, guides, and improves everyday decisions
+                  Building products that make money decisions clearer and agentic transactions safer
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-                  aima is a platform built to redefine how people interact with technology by creating AI systems that
-                  actively assist, guide, and improve everyday life. Today that work is centered on eva, our AI finance
-                  assistant. Instead of building tools that only display data, aima focuses on systems that think,
-                  analyze, and provide actionable insights people can use in real financial decisions.
+                  aima is a product company focused on turning AI into something operationally useful. Today that work shows up in eva, an AI finance assistant that makes financial behavior easier to understand, and Universal Transaction Gateway, an infrastructure layer in beta that helps agentic transaction systems stay human-approved and auditable.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Button asChild>
@@ -94,10 +92,12 @@ const About = () => {
                     </a>
                   </Button>
                   <Button variant="outline" asChild>
-                    <a href={supportUrl} target="_blank" rel="noopener noreferrer">Support & Help</a>
+                    <a href={toolLinks.utg} target="_blank" rel="noopener noreferrer">
+                      Open UTG
+                    </a>
                   </Button>
                   <Button variant="outline" asChild>
-                    <Link to="/privacy-policy">Privacy Policy</Link>
+                    <a href={supportUrl} target="_blank" rel="noopener noreferrer">Support & Help</a>
                   </Button>
                 </div>
               </div>
@@ -111,9 +111,7 @@ const About = () => {
               <article className="rounded-3xl border bg-card p-8 shadow-sm">
                 <h2 className="text-2xl font-semibold tracking-tight">What We Do</h2>
                 <p className="mt-4 leading-7 text-muted-foreground">
-                  We design and develop AI-powered financial experiences that act more like assistants than passive
-                  dashboards. The current public focus is eva, and the goal is to make that experience genuinely useful
-                  before broadening the product surface.
+                  We design and develop AI-powered products that feel more like working systems than passive dashboards. EVA focuses on consumer financial clarity. UTG focuses on the safety and control layer needed when agents begin coordinating transaction intent in the real world.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   {focusAreas.map((area) => (
@@ -128,22 +126,18 @@ const About = () => {
               <article className="rounded-3xl border bg-card p-8 shadow-sm">
                 <h2 className="text-2xl font-semibold tracking-tight">Our Vision</h2>
                 <p className="mt-4 leading-7 text-muted-foreground">
-                  To build a future where AI does not just provide information, but actively helps people make better
-                  decisions, manage their lives, and unlock their full potential.
+                  To build a future where AI products are not only intelligent, but also usable, trustworthy, and operationally clear enough for real decisions and real transaction flows.
                 </p>
                 <div className="mt-8 rounded-2xl border bg-background p-6">
-                  <h3 className="font-semibold">The Bigger Picture</h3>
+                  <h3 className="font-semibold">Why product focus matters</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    aima is being built with a long-term platform vision, but the current public product is eva. That
-                    focus helps the company build trust by shipping one strong finance experience instead of presenting
-                    multiple unfinished tools.
+                    aima is being built with a strong product discipline: ship live systems that can be explained clearly, supported responsibly, and evaluated honestly. That is why EVA and UTG matter more than generic AI positioning alone.
                   </p>
                 </div>
                 <div className="mt-6 rounded-2xl border bg-background p-6">
-                  <h3 className="font-semibold">Why aima Exists</h3>
+                  <h3 className="font-semibold">Why aima exists</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    Most financial tools show data but do not explain it, require manual effort, and do not adapt to
-                    users. aima exists to change that by building systems that understand, adapt, and act.
+                    Many tools either overwhelm people with data or give automation too much ambiguity. aima exists to reduce that ambiguity by making intelligence legible and execution safer.
                   </p>
                 </div>
               </article>
@@ -173,6 +167,9 @@ const About = () => {
           </div>
         </section>
 
+        <DocumentationProjectImages />
+        <DocumentationFlowAtlas />
+
         <section className="py-24">
           <div className="container">
             <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
@@ -184,9 +181,7 @@ const About = () => {
                   <h2 className="text-2xl font-semibold tracking-tight">Built By</h2>
                 </div>
                 <p className="mt-4 leading-7 text-muted-foreground">
-                  aima is built by an independent developer focused on AI systems, automation, and cloud and DevOps
-                  engineering. The goal is to create practical, real-world AI solutions that go beyond theory and
-                  actually help people, starting with finance.
+                  aima is built by a team focused on AI systems, automation, product clarity, and cloud infrastructure. The goal is to create practical systems that move beyond demos and into real, supportable use.
                 </p>
               </article>
 
@@ -198,9 +193,7 @@ const About = () => {
                   <h2 className="text-2xl font-semibold tracking-tight">Why This Matters</h2>
                 </div>
                 <p className="mt-4 leading-7 text-muted-foreground">
-                  Clear About, FAQ, and policy content helps users understand the platform quickly. aima is positioned
-                  to feel focused and credible by being honest about what is live today: eva is the product users can
-                  trust and explore right now.
+                  Clear product pages, blog explainers, and support content help users, partners, accelerators, and technical reviewers understand what is actually live today. aima is stronger when EVA and UTG are easy to evaluate, not buried in vague company language.
                 </p>
               </article>
             </div>

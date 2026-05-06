@@ -39,7 +39,7 @@ export default function BlogCategory() {
       itemListElement: posts.map((post, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `${blogUrl}/${post.slug}`,
+        url: `${blogUrl}/article/${post.slug}`,
         name: post.title,
       })),
     },
