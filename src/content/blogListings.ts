@@ -36,7 +36,7 @@ export const blogListingCategories = {
 export const lightweightBlogListings: BlogListing[] = [
   {
     slug: "introducing-universal-transaction-gateway",
-    title: "Introducing Universal Transaction Gateway: The Safety Layer for Agentic Commerce",
+    title: "Introducing Orbis (UTG): The Safety Layer for Agentic Commerce",
     description: "Why AIMA built UTG as the approval, idempotency, and control boundary between AI agent intent and real-world money movement.",
     excerpt: "UTG exists to let agents participate in real commerce without ever giving them unrestricted control over funds.",
     categorySlug: "product-updates",

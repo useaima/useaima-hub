@@ -15,7 +15,7 @@ const SearchModal = lazy(() =>
 const links = [
   { label: "Home", to: "/" },
   { label: "eva", to: "/finance" },
-  { label: "UTG", to: toolLinks.utg, external: true },
+  { label: "Orbis", to: toolLinks.utg, external: true },
   { label: "Support", to: "/support" },
   { label: "Blog", to: "https://blog.useaima.com", external: true },
   { label: "FAQs", to: "/#faq" },

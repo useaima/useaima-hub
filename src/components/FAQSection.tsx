@@ -10,7 +10,7 @@ export function FAQSection() {
       <div className="container max-w-3xl">
         <SectionHeader
           title="Frequently Asked Questions"
-          subtitle="Clear answers about what aima is, how eva and UTG fit together, and what users should expect from the live platform today."
+          subtitle="Clear answers about what aima is, how eva and Orbis fit together, and what users should expect from the live platform today."
         />
         <Accordion type="single" collapsible className="w-full">
           {faqItems.map((f, i) => (

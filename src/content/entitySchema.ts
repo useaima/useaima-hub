@@ -46,14 +46,14 @@ export const agentProfiles: AgentProfile[] = [
   },
   {
     key: "utg",
-    name: "Universal Transaction Gateway",
+    name: "Orbis",
     applicationCategory: "BusinessApplication",
     pageHref: toolLinks.utg,
     toolHref: toolLinks.utg,
     logoPath: "/aima-mark.png",
     description: "Human-approved infrastructure for agentic commerce, transaction safety, idempotency, and safer AI payment orchestration.",
-    utilityTldr: "UTG lets teams coordinate agent-driven transaction flows with approvals, logs, and safer execution boundaries.",
-    previewLabel: "Open UTG",
+    utilityTldr: "Orbis lets teams coordinate agent-driven transaction flows with approvals, logs, and safer execution boundaries.",
+    previewLabel: "Open Orbis",
     relatedKeys: ["eva"],
   },
 ];

@@ -12,6 +12,7 @@ const Index = lazy(() => import("./pages/Index"));
 const Finance = lazy(() => import("./pages/Finance"));
 const About = lazy(() => import("./pages/About"));
 const Privacy = lazy(() => import("./pages/Privacy"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Support = lazy(() => import("./pages/Support"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -61,6 +62,7 @@ const App = () => {
                     <Route path="/about" element={<About />} />
                     <Route path="/support" element={<Support />} />
                     <Route path="/privacy-policy" element={<Privacy />} />
+                    <Route path="/cookie-policy" element={<CookiePolicy />} />
                     <Route path="/terms-of-service" element={<Terms />} />
                     <Route path="/blog" element={<BlogHome />} />
                     <Route path="/blog/category/:slug" element={<BlogCategory />} />
