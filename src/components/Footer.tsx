@@ -7,8 +7,8 @@ const sections = [
     title: "Products",
     links: [
       { label: "eva", to: toolLinks.financeAI, external: true },
-      { label: "Universal Transaction Gateway", to: toolLinks.utg, external: true },
-      { label: "UTG GitHub", to: toolLinks.utgRepo, external: true },
+      { label: "Orbis", to: toolLinks.utg, external: true },
+      { label: "Orbis GitHub", to: toolLinks.utgRepo, external: true },
     ],
   },
   {
@@ -24,6 +24,7 @@ const sections = [
     title: "Legal",
     links: [
       { label: "Privacy Policy", to: "/privacy-policy" },
+      { label: "Cookie Policy", to: "/cookie-policy" },
       { label: "Terms of Service", to: "/terms-of-service" },
     ],
   },
@@ -37,7 +38,7 @@ export function Footer() {
           <div>
             <BrandLogo size="lg" />
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground" style={{ maxWidth: "30ch" }}>
-              aima builds eva and Universal Transaction Gateway to make financial intelligence and agentic transaction workflows more trustworthy, usable, and connected.
+              aima builds eva and Orbis to make financial intelligence and agentic transaction workflows more trustworthy, usable, and connected.
             </p>
             <p className="mt-4 text-sm text-muted-foreground">{siteEmail}</p>
           </div>
@@ -75,6 +76,9 @@ export function Footer() {
             </a>
             <Link to="/privacy-policy" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Privacy Policy
+            </Link>
+            <Link to="/cookie-policy" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
+              Cookie Policy
             </Link>
             <Link to="/terms-of-service" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Terms of Service

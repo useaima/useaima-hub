@@ -31,7 +31,7 @@ const supportStructuredData = [
     name: "aima Support",
     url: supportUrl,
     description:
-      "Official support center for aima, EVA, and Universal Transaction Gateway, including product help, direct support contact, Q&A, and learning resources.",
+      "Official support center for aima, EVA, and Orbis (UTG), including product help, direct support contact, Q&A, and learning resources.",
     inLanguage: "en-US",
     about: {
       "@id": organizationSchemaId,
@@ -82,12 +82,13 @@ export default function Support() {
     <>
       <SEOHead
         title="aima Support | Help, Q&A, and Product Guidance"
-        description="Official aima support center for help with EVA, Universal Transaction Gateway, product questions, direct contact, and practical Q&A."
+        description="Official aima support center for help with EVA, Orbis (UTG), product questions, direct contact, and practical Q&A."
         path="/"
         siteOrigin={supportUrl}
         keywords={[
           "aima support",
           "eva support",
+          "Orbis support",
           "UTG support",
           "support.useaima.com",
           "help@useaima.com",
@@ -115,7 +116,7 @@ export default function Support() {
             </Button>
             <Button asChild variant="outline" className="rounded-full">
               <a href={settings.utgUrl || toolLinks.utg} target="_blank" rel="noopener noreferrer">
-                Open UTG
+                Open Orbis
               </a>
             </Button>
           </div>
@@ -127,19 +128,19 @@ export default function Support() {
           <div className="container">
             <div className="mx-auto max-w-4xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-2 text-xs font-medium uppercase tracking-[0.22em] text-primary">
-                Official support for aima, eva, and UTG
+                Official support for aima, eva, and Orbis
               </div>
               <h1 className="mt-8 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
                 Help, support, and Q&amp;A across the AIMA product system
               </h1>
               <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-                support.useaima.com is the shared help layer for the AIMA platform. It gives people a clear way to get product help, rollout guidance, troubleshooting answers, and direct contact for both eva and Universal Transaction Gateway.
+                support.useaima.com is the shared help layer for the AIMA platform. It gives people a clear way to get product help, rollout guidance, troubleshooting answers, and direct contact for both eva and Orbis (UTG).
               </p>
 
               <div className="mt-8">
                 <AtomicUtilityBlock
                   title="Quick Support Summary"
-                  tldr={`Need help with aima, eva, or UTG? Use ${settings.supportUrl.replace(/^https?:\/\//, "")} for official help, Q&A, direct contact, and the fastest route to product guidance.`}
+                  tldr={`Need help with aima, eva, or Orbis? Use ${settings.supportUrl.replace(/^https?:\/\//, "")} for official help, Q&A, direct contact, and the fastest route to product guidance.`}
                   action={{
                     label: "Open support center",
                     href: settings.supportUrl,
@@ -148,7 +149,7 @@ export default function Support() {
                   highlights={[
                     "Official support channels",
                     "Product-specific collections",
-                    "Direct route to EVA and UTG help",
+                    "Direct route to EVA and Orbis help",
                   ]}
                   note="Best for users who want a fast support path without hunting across different sites."
                 />
@@ -249,11 +250,12 @@ export default function Support() {
 
       <footer className="border-t bg-background">
         <div className="container flex flex-col gap-4 py-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} aima Support. Official help and guidance for eva and Universal Transaction Gateway.</p>
+          <p>© {new Date().getFullYear()} aima Support. Official help and guidance for eva and Orbis.</p>
           <div className="flex flex-wrap gap-4">
             <a href={settings.siteUrl} className="transition-colors hover:text-foreground">Main site</a>
             <a href={`${settings.siteUrl}/about`} className="transition-colors hover:text-foreground">About</a>
             <a href={`${settings.siteUrl}/privacy-policy`} className="transition-colors hover:text-foreground">Privacy</a>
+            <a href={`${settings.siteUrl}/cookie-policy`} className="transition-colors hover:text-foreground">Cookies</a>
             <a href={`${settings.siteUrl}/terms-of-service`} className="transition-colors hover:text-foreground">Terms</a>
           </div>
         </div>

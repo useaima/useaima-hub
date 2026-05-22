@@ -4,11 +4,11 @@ export const blogUrl = "https://blog.useaima.com";
 export const supportUrl = "https://support.useaima.com";
 export const siteEmail = "help@useaima.com";
 export const siteDescription =
-  "aima builds eva and Universal Transaction Gateway, spanning financial clarity for people and safer infrastructure for agentic commerce.";
+  "aima builds eva and Orbis, spanning financial clarity for people and safer infrastructure for agentic commerce.";
 export const siteTagline =
-  "aima builds eva for financial clarity and Universal Transaction Gateway for safe, human-approved agentic commerce.";
+  "aima builds eva for financial clarity and Orbis for safe, human-approved agentic commerce.";
 export const siteBrandSummary =
-  "aima is the official home of eva and Universal Transaction Gateway, combining consumer financial intelligence with safer infrastructure for agentic transactions.";
+  "aima is the official home of eva and Orbis, combining consumer financial intelligence with safer infrastructure for agentic transactions.";
 export const brandKeywords = [
   "aima",
   "useaima",
@@ -17,6 +17,7 @@ export const brandKeywords = [
   "aima blog",
   "eva by aima",
   "eva.useaima.com",
+  "Orbis",
   "Universal Transaction Gateway",
   "UTG",
   "utg.useaima.com",
@@ -49,13 +50,13 @@ export const defaultPlatformProducts = [
   },
   {
     slug: "utg",
-    name: "Universal Transaction Gateway",
+    name: "Orbis",
     status: "Beta",
     summary: "Experimental human-approved transaction infrastructure for agentic commerce, safer payment orchestration, and auditable execution.",
     description:
-      "UTG is AIMA's experimental gateway for letting AI agents coordinate transaction intent safely through approvals, idempotency, and non-custodial control boundaries.",
+      "Orbis is AIMA's human-approved gateway for letting AI agents coordinate transaction intent safely through approvals, idempotency, and non-custodial control boundaries.",
     primaryUrl: toolLinks.utg,
-    primaryLabel: "Open UTG",
+    primaryLabel: "Open Orbis",
     secondaryUrl: toolLinks.utgRepo,
     secondaryLabel: "View GitHub",
     supportLabel: "Agentic commerce infrastructure",
@@ -76,13 +77,13 @@ export const supportLinks = {
 export const supportChannels = [
   {
     title: "Email support",
-    description: "Reach the team directly for questions about eva, UTG, partnerships, or rollout support.",
+    description: "Reach the team directly for questions about eva, Orbis, partnerships, or rollout support.",
     href: supportLinks.email,
     label: supportLinks.emailAddress,
   },
   {
     title: "Instagram updates",
-    description: "Follow aima for product drops, explainers, and support prompts across EVA and UTG.",
+    description: "Follow aima for product drops, explainers, and support prompts across EVA and Orbis.",
     href: supportLinks.instagram,
     label: supportLinks.instagramHandle,
   },
@@ -94,7 +95,7 @@ export const supportChannels = [
   },
   {
     title: "Support hub",
-    description: "Use the help center for official EVA and UTG guidance, Q&A, troubleshooting, and direct contact paths.",
+    description: "Use the help center for official EVA and Orbis guidance, Q&A, troubleshooting, and direct contact paths.",
     href: supportLinks.home,
     label: "support.useaima.com",
   },
@@ -104,22 +105,22 @@ export const faqItems = [
   {
     question: "What is aima?",
     answer:
-      "aima is the company behind eva and Universal Transaction Gateway. It builds AI products for financial clarity and safer agentic commerce.",
+      "aima is the company behind eva and Orbis. It builds AI products for financial clarity and safer agentic commerce.",
   },
   {
     question: "What products are live today?",
     answer:
-      "aima currently operates eva, the AI finance assistant, and Universal Transaction Gateway, the human-approved transaction layer for agentic commerce that is currently in beta.",
+      "aima currently operates eva, the AI finance assistant, and Orbis, the human-approved transaction layer for agentic commerce that is currently in beta.",
   },
   {
-    question: "How do eva and UTG differ?",
+    question: "How do eva and Orbis differ?",
     answer:
-      "eva is built for people who want clearer spending visibility and financial next-step guidance. UTG is built as infrastructure for safely coordinating agent-driven transaction flows with human approval and auditability.",
+      "eva is built for people who want clearer spending visibility and financial next-step guidance. Orbis is built as infrastructure for safely coordinating agent-driven transaction flows with human approval and auditability.",
   },
   {
     question: "Can I use multiple AIMA products together?",
     answer:
-      "Yes. aima is designed as a connected platform. Readers can learn through the blog, get help through the support center, use eva for finance workflows, and use UTG for agentic transaction infrastructure.",
+      "Yes. aima is designed as a connected platform. Readers can learn through the blog, get help through the support center, use eva for finance workflows, and use Orbis for agentic transaction infrastructure.",
   },
   {
     question: "Who is aima for?",
@@ -142,7 +143,7 @@ export const supportFaqItems = [
   {
     question: "What is aima?",
     answer:
-      "aima is the company behind eva and Universal Transaction Gateway. The support system covers both products through one official help layer.",
+      "aima is the company behind eva and Orbis. The support system covers both products through one official help layer.",
   },
   {
     question: "What is eva?",
@@ -150,18 +151,18 @@ export const supportFaqItems = [
       "eva is AIMA's live AI finance assistant. It helps people understand spending, review subscriptions, spot risks earlier, and make smarter next decisions.",
   },
   {
-    question: "What is Universal Transaction Gateway?",
+    question: "What is Orbis?",
     answer:
-      "Universal Transaction Gateway is AIMA's live infrastructure product for agentic commerce. It adds approvals, safety boundaries, and transaction control for AI-driven payment workflows.",
+      "Orbis is AIMA's live infrastructure product for agentic commerce. It adds approvals, safety boundaries, and transaction control for AI-driven payment workflows.",
   },
   {
-    question: "Where do I get support for EVA and UTG?",
+    question: "Where do I get support for EVA and Orbis?",
     answer:
       "The official support hub is support.useaima.com. You can also email help@useaima.com for direct product and account support.",
   },
   {
     question: "Where can I learn more about the products?",
     answer:
-      "You can explore eva at eva.useaima.com, UTG at utg.useaima.com, read practical explainers on blog.useaima.com, and visit useaima.com/about for the company story and product direction.",
+      "You can explore eva at eva.useaima.com, Orbis at utg.useaima.com, read practical explainers on blog.useaima.com, and visit useaima.com/about for the company story and product direction.",
   },
 ] as const;

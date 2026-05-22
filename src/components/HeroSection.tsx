@@ -52,7 +52,7 @@ export function HeroSection() {
           }`}
           style={{ transitionDelay: "240ms" }}
         >
-          {siteTagline} EVA helps people make clearer money decisions, while Universal Transaction Gateway gives AI-native systems a safer, human-approved way to coordinate transactions.
+          {siteTagline} EVA helps people make clearer money decisions, while Orbis gives AI-native systems a safer, human-approved way to coordinate transactions.
         </p>
 
         <div
@@ -61,7 +61,7 @@ export function HeroSection() {
           }`}
           style={{ transitionDelay: "300ms" }}
         >
-          {["Live product: eva", "Beta product: UTG", "Support, guides, and infrastructure clarity"].map((item) => (
+          {["Live product: eva", "Beta product: Orbis", "Support, guides, and infrastructure clarity"].map((item) => (
             <span key={item} className="rounded-full border bg-background/70 px-3 py-1.5">
               {item}
             </span>
@@ -81,7 +81,7 @@ export function HeroSection() {
           </Button>
           <Button variant="outline" size="lg" className="gap-2 active:scale-[0.97]" asChild>
             <a href={toolLinks.utg} target="_blank" rel="noopener noreferrer">
-              Open UTG <ArrowRight className="h-4 w-4" />
+              Open Orbis <ArrowRight className="h-4 w-4" />
             </a>
           </Button>
           <Button variant="ghost" size="lg" className="gap-2 active:scale-[0.97]" asChild>

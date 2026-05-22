@@ -14,7 +14,7 @@ const focusAreas = [
   },
   {
     title: "Safer agentic execution",
-    description: "Giving AI-native systems a human-approved, auditable path for transaction coordination through UTG.",
+    description: "Giving AI-native systems a human-approved, auditable path for transaction coordination through Orbis.",
   },
   {
     title: "Trustworthy product focus",
@@ -35,7 +35,7 @@ const principles = [
   },
   {
     title: "Integration Over Isolation",
-    description: "We connect products, support, and education so eva and UTG make sense as part of one AIMA platform.",
+    description: "We connect products, support, and education so eva and Orbis make sense as part of one AIMA platform.",
     icon: BrainCircuit,
   },
 ];
@@ -47,7 +47,7 @@ const aboutStructuredData = [
     name: "About aima",
     url: `${siteUrl}/about`,
     description:
-      "Learn about aima, the company behind eva and Universal Transaction Gateway.",
+      "Learn about aima, the company behind eva and Orbis.",
     isPartOf: siteUrl,
     about: {
       "@type": "Organization",
@@ -63,9 +63,9 @@ const About = () => {
     <>
       <SEOHead
         title="About aima"
-        description="Learn what aima is, what EVA and UTG do today, and the vision behind the platform."
+        description="Learn what aima is, what EVA and Orbis do today, and the vision behind the platform."
         path="/about"
-        keywords={["about aima", "AI startup", "eva", "UTG", "agentic commerce"]}
+        keywords={["about aima", "AI startup", "eva", "Orbis", "agentic commerce"]}
         structuredData={aboutStructuredData}
       />
       <Navbar />
@@ -82,7 +82,7 @@ const About = () => {
                   Building products that make money decisions clearer and agentic transactions safer
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-muted-foreground">
-                  aima is a product company focused on turning AI into something operationally useful. Today that work shows up in eva, an AI finance assistant that makes financial behavior easier to understand, and Universal Transaction Gateway, an infrastructure layer in beta that helps agentic transaction systems stay human-approved and auditable.
+                  aima is a product company focused on turning AI into something operationally useful. Today that work shows up in eva, an AI finance assistant that makes financial behavior easier to understand, and Orbis (UTG), an infrastructure layer in beta that helps agentic transaction systems stay human-approved and auditable.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <Button asChild>
@@ -93,7 +93,7 @@ const About = () => {
                   </Button>
                   <Button variant="outline" asChild>
                     <a href={toolLinks.utg} target="_blank" rel="noopener noreferrer">
-                      Open UTG
+                      Open Orbis
                     </a>
                   </Button>
                   <Button variant="outline" asChild>
@@ -111,7 +111,7 @@ const About = () => {
               <article className="rounded-3xl border bg-card p-8 shadow-sm">
                 <h2 className="text-2xl font-semibold tracking-tight">What We Do</h2>
                 <p className="mt-4 leading-7 text-muted-foreground">
-                  We design and develop AI-powered products that feel more like working systems than passive dashboards. EVA focuses on consumer financial clarity. UTG focuses on the safety and control layer needed when agents begin coordinating transaction intent in the real world.
+                  We design and develop AI-powered products that feel more like working systems than passive dashboards. EVA focuses on consumer financial clarity. Orbis focuses on the safety and control layer needed when agents begin coordinating transaction intent in the real world.
                 </p>
                 <div className="mt-8 grid gap-4 sm:grid-cols-2">
                   {focusAreas.map((area) => (
@@ -131,7 +131,7 @@ const About = () => {
                 <div className="mt-8 rounded-2xl border bg-background p-6">
                   <h3 className="font-semibold">Why product focus matters</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                    aima is being built with a strong product discipline: ship live systems that can be explained clearly, supported responsibly, and evaluated honestly. That is why EVA and UTG matter more than generic AI positioning alone.
+                    aima is being built with a strong product discipline: ship live systems that can be explained clearly, supported responsibly, and evaluated honestly. That is why EVA and Orbis matter more than generic AI positioning alone.
                   </p>
                 </div>
                 <div className="mt-6 rounded-2xl border bg-background p-6">
@@ -193,7 +193,7 @@ const About = () => {
                   <h2 className="text-2xl font-semibold tracking-tight">Why This Matters</h2>
                 </div>
                 <p className="mt-4 leading-7 text-muted-foreground">
-                  Clear product pages, blog explainers, and support content help users, partners, accelerators, and technical reviewers understand what is actually live today. aima is stronger when EVA and UTG are easy to evaluate, not buried in vague company language.
+                  Clear product pages, blog explainers, and support content help users, partners, accelerators, and technical reviewers understand what is actually live today. aima is stronger when EVA and Orbis are easy to evaluate, not buried in vague company language.
                 </p>
               </article>
             </div>

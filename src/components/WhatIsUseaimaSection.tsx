@@ -16,7 +16,7 @@ const pillars = [
   {
     title: "Two current products with clear roles",
     description:
-      "eva helps people understand financial behavior, while UTG gives teams a safer transaction layer for agentic commerce and human approval flows.",
+      "eva helps people understand financial behavior, while Orbis gives teams a safer transaction layer for agentic commerce and human approval flows.",
     icon: BrainCircuit,
   },
   {
@@ -33,7 +33,7 @@ export function WhatIsaimaSection() {
       <div className="container">
         <SectionHeader
           title="What Is aima?"
-          subtitle="aima is the company building eva and Universal Transaction Gateway, combining financial intelligence and safe transaction infrastructure in one connected platform."
+          subtitle="aima is the company building eva and Orbis, combining financial intelligence and safe transaction infrastructure in one connected platform."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">

@@ -60,9 +60,9 @@ export const defaultSharedSiteSettings: SharedSiteSettings = {
   instagramHandle: supportLinks.instagramHandle,
   youtubeLabel: supportLinks.youtubeLabel,
   supportBlurb:
-    "Use the official help center for EVA and Universal Transaction Gateway documentation, troubleshooting, and direct support.",
+    "Use the official help center for EVA and Orbis documentation, troubleshooting, and direct support.",
   companyDescription:
-    "aima builds live AI products for financial clarity and agentic commerce, including eva and Universal Transaction Gateway.",
+    "aima builds live AI products for financial clarity and agentic commerce, including eva and Orbis.",
 };
 
 export const defaultSharedPlatformData: SharedPlatformData = {
@@ -79,8 +79,8 @@ export const defaultSharedPlatformData: SharedPlatformData = {
     },
     {
       slug: "utg-overview",
-      title: "UTG overview",
-      description: "Understand Universal Transaction Gateway, onboarding, safety, and transaction control flows.",
+      title: "Orbis overview",
+      description: "Understand Orbis (UTG), onboarding, safety, and transaction control flows.",
       productSlug: "utg",
       featured: true,
       articleCount: 0,
@@ -135,7 +135,7 @@ export function buildSupportChannels(settings: SharedSiteSettings) {
   return [
     {
       title: "Email support",
-      description: "Reach the team directly for product questions, startup inquiries, or rollout help for eva and UTG.",
+      description: "Reach the team directly for product questions, startup inquiries, or rollout help for eva and Orbis.",
       href: `mailto:${settings.supportEmail}`,
       label: settings.supportEmail,
     },

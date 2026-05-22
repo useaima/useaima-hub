@@ -95,7 +95,7 @@ const homeStructuredData = [
     "@type": "ItemList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "eva", url: toolLinks.financeAI },
-      { "@type": "ListItem", position: 2, name: "Universal Transaction Gateway", url: toolLinks.utg },
+      { "@type": "ListItem", position: 2, name: "Orbis", url: toolLinks.utg },
       { "@type": "ListItem", position: 3, name: "Blog", url: blogUrl },
       { "@type": "ListItem", position: 4, name: "Support", url: "https://support.useaima.com" },
     ],
@@ -155,7 +155,7 @@ function SectionPlaceholder({ minHeight, tinted = false }: { minHeight: number; 
 const Index = () => (
   <>
     <SEOHead
-      title="aima Official Website | Company Behind eva and Universal Transaction Gateway"
+      title="aima Official Website | Company Behind eva and Orbis"
       description={siteDescription}
       path="/"
       keywords={[...brandKeywords]}

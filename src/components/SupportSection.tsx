@@ -27,7 +27,7 @@ export function SupportSection() {
       <div className="container">
         <SectionHeader
           title="Support & Help"
-          subtitle="Need help with aima, eva, or Universal Transaction Gateway? The support flow is built around direct contact, quick answers, and a dedicated help center at support.useaima.com."
+          subtitle="Need help with aima, eva, or Orbis? The support flow is built around direct contact, quick answers, and a dedicated help center at support.useaima.com."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
@@ -35,7 +35,7 @@ export function SupportSection() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-muted-foreground">Support Hub</p>
             <h3 className="mt-4 text-3xl font-semibold tracking-tight">Get product guidance, rollout help, and Q&amp;A in one place</h3>
             <p className="mt-4 max-w-2xl text-base leading-8 text-muted-foreground">
-              aima support is designed to make the product experience feel dependable. Use the help center for EVA workflows, UTG setup and troubleshooting, onboarding questions, direct contact options, and the fastest route to answers.
+              aima support is designed to make the product experience feel dependable. Use the help center for EVA workflows, Orbis setup and troubleshooting, onboarding questions, direct contact options, and the fastest route to answers.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button asChild className="rounded-full">
@@ -50,7 +50,7 @@ export function SupportSection() {
             <div className="mt-8 rounded-[1.5rem] border bg-muted/20 p-6">
               <p className="text-sm font-semibold">What you can do there</p>
               <ul className="mt-4 space-y-3 text-sm leading-7 text-muted-foreground">
-                <li>Find direct help for both EVA and UTG.</li>
+                <li>Find direct help for both EVA and Orbis.</li>
                 <li>Read official support articles without hunting across different repos and sites.</li>
                 <li>Use the official channels for support, updates, and walkthroughs.</li>
               </ul>

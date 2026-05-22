@@ -14,12 +14,12 @@ interface SearchItem {
 }
 
 const staticSearchData: SearchItem[] = [
-  { title: "What is aima?", description: "Overview of aima, eva, and Universal Transaction Gateway", category: "Page", to: "/#what-is-aima" },
+  { title: "What is aima?", description: "Overview of aima, eva, and Orbis", category: "Page", to: "/#what-is-aima" },
   { title: "eva", description: "AI finance assistant for spending clarity and next-step guidance", category: "Product", to: toolLinks.financeAI, external: true },
-  { title: "Universal Transaction Gateway", description: "Human-approved transaction infrastructure for agentic commerce", category: "Product", to: toolLinks.utg, external: true },
-  { title: "UTG GitHub", description: "Developer repo for Universal Transaction Gateway", category: "Product", to: toolLinks.utgRepo, external: true },
+  { title: "Orbis", description: "Human-approved transaction infrastructure for agentic commerce", category: "Product", to: toolLinks.utg, external: true },
+  { title: "Orbis GitHub", description: "Developer repo for Orbis (UTG)", category: "Product", to: toolLinks.utgRepo, external: true },
   { title: "Finance", description: "AI-powered financial intelligence hub for eva", category: "Page", to: "/finance" },
-  { title: "Support", description: "Help, support, and Q&A for aima, eva, and UTG", category: "Page", to: "/support" },
+  { title: "Support", description: "Help, support, and Q&A for aima, eva, and Orbis", category: "Page", to: "/support" },
   { title: "About Us", description: "Learn about the aima mission, vision, and approach", category: "Page", to: "/about" },
   { title: "Privacy Policy", description: "How aima handles user data and privacy", category: "Page", to: "/privacy-policy" },
   { title: "Terms of Service", description: "Terms that govern use of the aima platform", category: "Page", to: "/terms-of-service" },
@@ -94,7 +94,7 @@ export function SearchModal({ open, onClose }: SearchModalProps) {
             autoFocus
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search eva, UTG, pages, blog…"
+            placeholder="Search eva, Orbis, pages, blog..."
             className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
           />
           <button onClick={onClose} className="rounded p-1 text-muted-foreground hover:text-foreground active:scale-95">

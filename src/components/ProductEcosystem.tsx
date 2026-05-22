@@ -35,7 +35,7 @@ export function ProductEcosystem() {
       <div className="container">
         <SectionHeader
           title="Current Products"
-          subtitle="aima now operates across eva for financial clarity and Universal Transaction Gateway for safer agentic transactions in beta."
+          subtitle="aima now operates across eva for financial clarity and Orbis for safer agentic transactions in beta."
         />
         <div className="mx-auto grid max-w-5xl gap-6 lg:grid-cols-2">
           {orderedProducts.map((product, index) => (
