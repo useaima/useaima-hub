@@ -80,6 +80,9 @@ export function Footer() {
             <Link to="/cookie-policy" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Cookie Policy
             </Link>
+            <a href="#" className="termly-display-preferences text-xs text-muted-foreground transition-colors hover:text-foreground">
+              Consent Preferences
+            </a>
             <Link to="/terms-of-service" className="text-xs text-muted-foreground transition-colors hover:text-foreground">
               Terms of Service
             </Link>
